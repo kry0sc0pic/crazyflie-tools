@@ -205,9 +205,9 @@ try:
     c.print("🛰  Setting Up Swarm")
     with Swarm(URIS,factory=factory) as swarm:
         c.print("🛸 Swarm Ready")
-        swarm.parallel(wait_for_position_estimator)
         c.print("🔄 Resetting Estimators")
         swarm.reset_estimators()
+        swarm.parallel(wait_for_position_estimator)
         c.print("🚀 Starting Sequence")
         try:
             swarm.parallel_safe(dynamic_loop)
